@@ -11,13 +11,16 @@ function App() {
     .then(res => res.json())
     .then(data => setCountries(data))
     .catch(error => console.error(error))
-  }, [])
+  }, []);
+  const handleAddCountry = (country) => {
+    console.log('country added', country)
+  }
   return (
     <div className="App">
       <h1>country loaded: {countries.length}</h1>
       <ul>
           {
-            countries.map(country => <Country country={country} key={country.alpha3Code}></Country>)
+            countries.map(country => <Country country={country} handleAddCountry={handleAddCountry} key={country.alpha3Code}></Country>)
           }
       </ul>
       <header className="App-header">
