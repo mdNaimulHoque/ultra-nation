@@ -17,7 +17,7 @@ function App() {
       <h1>country loaded: {countries.length}</h1>
       <ul>
           {
-            countries.map(country => <Country name={country.name}></Country>)
+            countries.map(country => <Country country={country} key={country.alpha3Code}></Country>)
           }
       </ul>
       <header className="App-header">
